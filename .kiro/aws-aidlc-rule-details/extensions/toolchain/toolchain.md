@@ -111,12 +111,17 @@ If `toolchain.md` does not exist, prompt user to create it using the template be
 
 For each tool in `toolchain.md`, validate MCP connectivity:
 
-1. **Check MCP exists**: Verify the MCP server name is configured in Kiro
-2. **Test connection**: Attempt a lightweight read operation:
+1. **Check MCP is configured in workspace**: Read `.kiro/mcp.json` (or the workspace MCP configuration file) and verify the MCP server name from `toolchain.md` exists as a configured server. If the server name is NOT found in `mcp.json`:
+   - Flag as ❌ **Not configured**
+   - Inform user: *"The MCP server '{name}' referenced in toolchain.md is not configured in your workspace's `.kiro/mcp.json`. Please add it to your MCP configuration or update toolchain.md with the correct server name."*
+   - Provide the expected `mcp.json` entry format for the missing server
+
+2. **Test connection**: If MCP is configured, attempt a lightweight read operation:
    - Jira: List projects or get project info
    - GitHub/GitLab: List repositories or get repo info
    - Confluence: List spaces or get space info
    - Miro: List boards (if MCP available)
+
 3. **Report status**:
 
 ```markdown
