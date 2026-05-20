@@ -3,7 +3,7 @@
 ## Project Information
 - **Project Type**: Greenfield
 - **Start Date**: 2026-05-17T00:00:00Z
-- **Current Stage**: CONSTRUCTION - Foundation Unit - Code Generation (Planning)
+- **Current Stage**: CONSTRUCTION - Recipe Advisor Unit - NFR Requirements
 
 ## Workspace State
 - **Existing Code**: No
@@ -46,4 +46,21 @@
 - [x] INCEPTION - Application Design
 - [x] INCEPTION - Units Generation
 - [ ] CONSTRUCTION - Per-Unit Design & Code Generation
+  - [ ] Foundation Unit (halilbahadir - lead)
+    - [x] Functional Design
+    - [x] NFR Requirements
+    - [x] NFR Design
+    - [x] Infrastructure Design
+    - [ ] Code Generation (in progress)
+  - [ ] Recipe Advisor Unit (awsHalil - lead)
+    - [x] Functional Design
+    - [ ] NFR Requirements ← CURRENT (awsHalil)
+    - [ ] NFR Requirements
+    - [ ] NFR Design
+    - [ ] Infrastructure Design
+    - [ ] Code Generation (waiting on Foundation)
+  - [ ] Calorie Tracking Unit (halilbahadir - lead)
 - [ ] CONSTRUCTION - Build and Test
+
+## Current Stage
+CONSTRUCTION - Recipe Advisor Unit - Functional Design (Plan created, awaiting answers)

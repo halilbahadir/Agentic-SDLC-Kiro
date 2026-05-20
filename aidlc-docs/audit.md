@@ -201,3 +201,65 @@
 **Context**: CONSTRUCTION - Foundation Unit - Infrastructure Design approved. Moving to Code Generation.
 
 ---
+
+## Recipe Advisor - Construction Guidance Request
+**Timestamp**: 2026-05-20T00:00:00Z
+**User Input**: "No, code generation of the Foundation Unit will be done by its owner (lead) halilbahadir. I will start construction of 'Recipe Advisor'. I will wait Foundation Unit Code generation, because of dependency. Can you guide me construction for Recipe Advisor"
+**AI Response**: Reviewed project state, team assignments, unit-of-work, story map, and construction rule files. Provided Recipe Advisor construction roadmap for awsHalil covering all 5 stages: Functional Design, NFR Requirements, NFR Design, Infrastructure Design, and Code Generation. awsHalil confirmed as unit lead for Recipe Advisor. Construction can begin immediately (design stages have no dependency on Foundation code).
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Planning. awsHalil starting parallel construction track.
+
+---
+
+## Recipe Advisor - Functional Design Start
+**Timestamp**: 2026-05-20T00:01:00Z
+**User Input**: "Start Functional Design for Recipe Advisor"
+**AI Response**: Loaded inherited design principles from Application Design (architecture patterns, API style, auth, data access, error handling, logging, offline-first, user isolation). Loaded Foundation functional design artifacts (domain entities, business rules, frontend component patterns). Loaded cross-unit contract (POST /ai/analyze/fridge). Generating functional design plan with questions for Recipe Advisor unit.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design, Step 1-4. Creating plan file.
+
+---
+
+## Recipe Advisor - Functional Design Plan Updated (Foundation Cross-Reference)
+**Timestamp**: 2026-05-20T00:02:00Z
+**User Input**: "Did you review Foundation Unit design as reference and dependency reasons? Are there any update for the recipe advisor unit design?"
+**AI Response**: Performed full cross-reference of all Foundation artifacts (functional design, NFR requirements, NFR design, infrastructure design, tech stack decisions). Found 6 gaps in the Recipe Advisor functional design plan. Updated plan with: (1) 5 new inherited principles added to constraints table (AI model locked to Claude 4.6 Sonnet, Lambda 512MB/60s timeout ceiling, code splitting lazy bundle boundaries, PouchDB shared cache budget, data-testid naming convention); (2) 3 new questions added (Q23: Bedrock timeout handling, Q24: PouchDB cache scope, Q25: Recipe Service DynamoDB read pattern). Plan now has 25 questions across 9 sections.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design, Plan refinement complete.
+
+---
+
+## Recipe Advisor - Functional Design Answers Received
+**Timestamp**: 2026-05-20T00:03:00Z
+**User Input**: "done"
+**AI Response**: Read all 25 answers from plan file. Identified 2 issues requiring clarification before artifact generation: (1) Contradiction between Q16 (offline: saved recipes only) and Q17 (offline ingredient changes queued in PouchDB); (2) Q25 answer (frontend passes ingredient list) deviates from inherited principle (Recipe Service reads DynamoDB directly). Presenting clarification questions to user before proceeding.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design, Step 2 - Answer analysis. Ambiguities detected, awaiting resolution.
+
+---
+
+## Recipe Advisor - Functional Design Clarifications Resolved
+**Timestamp**: 2026-05-20T00:04:00Z
+**User Input**: "Issue1: B , Issue2: B"
+**AI Response**: Issue 1 resolved — Q16 updated to option B: offline = saved recipes + view/edit ingredient list (queued sync). Issue 2 resolved — Q25 updated to option B: Recipe Service Lambda reads IngredientsTable directly via DynamoDB SDK (no deviation, stays within inherited principle). Proceeding to generate all four functional design artifacts.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design, Step 2 complete. Beginning Steps 3-6 (artifact generation).
+
+---
+
+## Recipe Advisor - Functional Design Artifacts Generated
+**Timestamp**: 2026-05-20T00:05:00Z
+**AI Response**: Generated all 4 functional design artifacts for Recipe Advisor unit. domain-entities.md: Ingredient (extended with unit/source/confidence), RecipeSuggestion (transient), SavedRecipe (persisted with notes), RecipeSuggestionCache (PouchDB), DynamoDB access patterns for IngredientsTable and RecipesTable. business-rules.md: 8 rule sets (BR-RA-01 through BR-RA-08) covering ingredient validation, category auto-suggestion, fridge scan, recipe suggestion, filters, save, offline behavior, recipe detail. business-logic-model.md: 8 flows (ingredient CRUD, fridge scan, recipe suggestion with cache, recipe detail/save, filter, saved recipes, offline sync integration, category lookup algorithm). frontend-components.md: Full component hierarchy for ingredients.js and recipes.js lazy bundles, 12 components with props/state/interactions/data-testid conventions, 3 custom hooks (useIngredients, useRecipeSuggestions, useSavedRecipes). Plan checkboxes Steps 1-6 marked complete.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design, Steps 3-6 complete. Presenting for approval.
+
+---
+
+## Recipe Advisor - Functional Design Approved
+**Timestamp**: 2026-05-20T00:06:00Z
+**User Input**: "Continue to Next Stage"
+**AI Response**: Functional Design approved. Marked Step 7 complete in plan. Updated aidlc-state.md. Proceeding to NFR Requirements for Recipe Advisor unit.
+**Context**: CONSTRUCTION - Recipe Advisor Unit - Functional Design approved. Moving to NFR Requirements.
+
+---
+
+## Recipe Advisor - NFR Requirements Plan Created
+**Timestamp**: 2026-05-20T00:07:00Z
+**AI Response**: Created recipe-advisor-nfr-requirements-plan.md with 13 questions across 5 sections. Inherited NFRs table documents all Foundation-level decisions that are not re-asked (concurrent users, DynamoDB on-demand, Lambda config, API Gateway throttling, error rate, retry policy, availability, region, encryption, logging, monitoring, offline cache budget, AI model). New questions focus exclusively on Recipe Advisor-specific concerns: Bedrock latency targets (Q1-Q2), loading UX for AI operations (Q3), ingredient list truncation for prompts (Q4), saved recipe limits (Q5), PouchDB footprint (Q6), Bedrock degradation (Q7), ingredient CRUD latency (Q8), cache refresh strategy (Q9), list rendering performance (Q10), offline UX response time (Q11), fridge image retention (Q12), Bedrock PII concern (Q13).
+**Context**: CONSTRUCTION - Recipe Advisor Unit - NFR Requirements. Plan created, awaiting answers.
+
+---
